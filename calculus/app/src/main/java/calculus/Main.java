@@ -14,11 +14,13 @@ public class Main {
         Expression x = new Variable();
         Expression sinusVonX = new UnaryOp(UnaryFunction.SIN, x);
         Expression xQuadrat = new BinaryOp(Operator.POWER, x, new NumberLiteral(2.0));
+        Expression wurzelX = new UnaryOp(UnaryFunction.SQRT, x);
         Expression formel = new BinaryOp(Operator.PLUS, sinusVonX, xQuadrat);
 
         System.out.println("Ausdruck: " + formel);
         System.out.println("f(0) = " + formel.evaluate(0.0));
         System.out.println("f(1) = " + formel.evaluate(1.0));
         System.out.println("f(Pi) = " + formel.evaluate(Math.PI));
+        System.out.println("f(-1): " + wurzelX.evaluate(-1));
     }
 }
